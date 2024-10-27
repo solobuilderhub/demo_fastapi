@@ -36,7 +36,7 @@ def insert_dummy_data():
     connection.commit()
     cursor.close()
     connection.close()
-    return {"message": "Dummy data inserted successfully okay in dockers!"}
+    return {"message": "Dummy data inserted successfully okay in dockers!", "status": 200}
 
 @app.get("/get-dummy-data/")
 def get_dummy_data():
