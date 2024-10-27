@@ -14,11 +14,16 @@ async def root():
     return {"message": "Hello, FastAPI!"}
 
 def get_db_connection():
+    host = os.getenv("DB_HOST")
+    user = os.getenv("DB_USER")
+    password = os.getenv("DB_PASSWORD")
+    database = os.getenv("DB_NAME")
+    print(host, user, password, database)
     connection = mysql.connector.connect(
-    host=os.getenv("DB_HOST"),
-    user=os.getenv("DB_USER"),
-    password=os.getenv("DB_PASSWORD"),
-    database=os.getenv("DB_NAME")
+        host=host,
+        user=user,
+        password=password,
+        database=database
     )
     return connection
 
