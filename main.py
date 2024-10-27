@@ -18,7 +18,7 @@ def get_db_connection():
     user = os.getenv("DB_USER")
     password = os.getenv("DB_PASSWORD")
     database = os.getenv("DB_NAME")
-    print(host, user, password, database)
+    # print(host, user, password, database)
     connection = mysql.connector.connect(
         host=host,
         user=user,
@@ -46,4 +46,4 @@ def get_dummy_data():
     data = cursor.fetchall()
     cursor.close()
     connection.close()
-    return {"data": data}
+    return {"data": data, "status": 200}
